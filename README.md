@@ -780,6 +780,10 @@ cd grimreaperX
 
 ## Backend
 
+The API binds to `127.0.0.1` by default and only allows the local frontend origins `http://127.0.0.1:5173` and `http://localhost:5173` by default. Set `ALLOW_REMOTE=true` only for deployments that intentionally expose the API beyond the local machine. Custom CORS origins can be provided through `CORS_ORIGINS` as a comma-separated list.
+
+The API also enforces a 64 KiB request-body limit and a default per-device rate limit of 60 requests per 60 seconds. These can be adjusted with `MAX_REQUEST_BYTES`, `RATE_LIMIT_REQUESTS`, and `RATE_LIMIT_WINDOW_SECONDS`.
+
 Create a virtual environment:
 
 ```bash
